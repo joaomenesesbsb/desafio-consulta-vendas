@@ -3,12 +3,14 @@ package com.devsuperior.dsmeta.dto;
 import java.time.LocalDate;
 
 import com.devsuperior.dsmeta.entities.Sale;
+import com.devsuperior.dsmeta.entities.Seller;
 
 public class SaleMinDTO {
 
 	private Long id;
 	private Double amount;
 	private LocalDate date;
+	private Seller seller;
 	
 	public SaleMinDTO(Long id, Double amount, LocalDate date) {
 		this.id = id;
@@ -20,6 +22,7 @@ public class SaleMinDTO {
 		id = entity.getId();
 		amount = entity.getAmount();
 		date = entity.getDate();
+		seller = entity.getSeller();
 	}
 
 	public Long getId() {
@@ -32,5 +35,9 @@ public class SaleMinDTO {
 
 	public LocalDate getDate() {
 		return date;
+	}
+
+	public Seller getSeller() {
+		return seller;
 	}
 }
